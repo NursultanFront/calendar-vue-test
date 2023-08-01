@@ -17,10 +17,12 @@ watch(dateIn, (newVal) => {
 
 <template>
   <div class="date-picker">
-    <p>{{ dateIn }}</p>
-    <p>{{ dateOut.toString() }}</p>
-    <div class="dis">
+    <div>
+      <h2>Одиночный</h2>
       <TheCalendar v-model="dateIn" :inline="false" :multi="true" />
+    </div>
+    <div>
+      <h2>Зависит от выбора первого календаря</h2>
       <TheRangeCalendar
         v-model="dateOut"
         :inline="false"
@@ -28,6 +30,9 @@ watch(dateIn, (newVal) => {
         :range="true"
         :fixed-start="true"
       />
+    </div>
+    <div>
+      <h2>Здесь выбор двух дат</h2>
       <TheRangeCalendar
         v-model="date"
         :inline="false"
